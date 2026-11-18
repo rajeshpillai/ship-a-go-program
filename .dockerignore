@@ -1,0 +1,6 @@
+.bin
+.git
+*.md
+out
+run.py
+__pycache__

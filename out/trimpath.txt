@@ -1,0 +1,4 @@
+$ go build -o shelf ./shelf && strings shelf | grep -m1 /shelf/main.go
+/home/you/lab/social-media/yt-creatives/output/tutorial/golang/05-ship-a-go-program/code/shelf/main.go
+$ go build -trimpath -o shelf ./shelf && strings shelf | grep -m1 /shelf/main.go
+github.com/rajeshpillai/ship-a-go-program/shelf/main.go

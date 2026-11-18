@@ -1,0 +1,10 @@
+$ docker build --no-cache -f docker/naive.Dockerfile -t shelf:naive .
+$ docker build --no-cache -f docker/scratch.Dockerfile -t shelf:scratch .
+$ docker build --no-cache -f docker/scratch-fixed.Dockerfile -t shelf:scratch-fixed .
+$ docker build --no-cache --build-arg VERSION=v1.0.0 -t shelf:final .
+$ docker images shelf
+REPOSITORY:TAG        SIZE
+shelf:final           16.3MB
+shelf:naive           1.41GB
+shelf:scratch         9.66MB
+shelf:scratch-fixed   10.5MB

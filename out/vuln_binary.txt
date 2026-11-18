@@ -1,0 +1,7 @@
+$ go version shelf shelf-image     # built here, and copied out of shelf:final
+shelf: go1.26.2
+shelf-image: go1.26.11
+$ govulncheck -mode binary shelf
+Your code is affected by 22 vulnerabilities from the Go standard library.
+$ govulncheck -mode binary shelf-image
+No vulnerabilities found.

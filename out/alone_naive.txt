@@ -1,0 +1,3 @@
+$ cp naive ~/elsewhere/ && cd ~/elsewhere && ./naive &
+$ curl localhost:8080/books
+open static/books.json: no such file or directory

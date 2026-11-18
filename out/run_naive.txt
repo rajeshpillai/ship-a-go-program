@@ -1,0 +1,12 @@
+$ docker run -d --name shelf -p 8080:8080 shelf:naive
+$ curl localhost:8080/books
+[
+  {"id": 1, "title": "The Go Programming Language", "author": "Alan Donovan and Brian Kernighan"},
+$ curl localhost:8080/hours
+shelf time 23:25 IST, open: false
+$ curl localhost:8080/latest-go
+latest Go: go1.27.4
+$ docker top shelf -o pid,uid,args
+PID                 UID                 COMMAND
+357200              0                   /bin/sh -c /app/server
+357269              0                   /app/server

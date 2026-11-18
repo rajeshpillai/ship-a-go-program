@@ -1,0 +1,9 @@
+$ docker run -d --name shelf -p 8080:8080 shelf:naive
+$ curl 'localhost:8080/slow?ms=3000' &     # a 3-second request
+$ time docker stop shelf     # one second later
+real	0m10.273s
+$ # the request:
+done after 3000 ms
+[curl exit code 0]
+$ docker inspect -f '{{.State.ExitCode}}' shelf
+137

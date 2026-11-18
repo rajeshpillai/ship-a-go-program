@@ -1,0 +1,3 @@
+$ docker run -d --name shelf shelf:final
+$ docker ps --format '{{.Image}}  {{.Status}}'
+shelf:final  Up 5 seconds (healthy)

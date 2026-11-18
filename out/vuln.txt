@@ -1,0 +1,17 @@
+$ go version
+go version go1.26.2 linux/amd64
+$ govulncheck ./...
+Vulnerability #1: GO-2026-6859
+    HTTP/1 server crash due to MaxBytesReader header race in net/http
+  More info: https://pkg.go.dev/vuln/GO-2026-6859
+  Standard library
+    Found in: net/http@go1.26.2
+    Fixed in: net/http@go1.26.11
+    Example traces found:
+      #1: shelf/main.go:144:13: shelf.versionInfo calls fmt.Fprintf, which eventually calls http.CanonicalHeaderKey
+      #2: shelf/main.go:134:20: shelf.healthcheck calls http.Client.Get
+      #3: naive/main.go:15:17: naive.main calls http.HandleFunc
+…
+Your code is affected by 22 vulnerabilities from the Go standard library.
+$ GOTOOLCHAIN=go1.26.11 govulncheck ./...
+No vulnerabilities found.

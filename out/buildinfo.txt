@@ -1,0 +1,14 @@
+$ go version -m shelf
+shelf: go1.26.2
+	path	github.com/rajeshpillai/ship-a-go-program/shelf
+	mod	github.com/rajeshpillai/ship-a-go-program	(devel)	
+	build	-buildmode=exe
+	build	-compiler=gc
+	build	CGO_ENABLED=1
+	build	GOARCH=amd64
+	build	GOOS=linux
+	build	GOAMD64=v1
+	build	vcs=git
+	build	vcs.revision=fb31c104c08e3518a62875b7ad7190ebc3c582e5
+	build	vcs.time=2026-11-18T13:19:30Z
+	build	vcs.modified=true

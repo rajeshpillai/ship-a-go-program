@@ -1,0 +1,5 @@
+[
+  {"id": 1, "title": "The Go Programming Language", "author": "Alan Donovan and Brian Kernighan"},
+  {"id": 2, "title": "The C Programming Language", "author": "Brian Kernighan and Dennis Ritchie"},
+  {"id": 3, "title": "The Mythical Man-Month", "author": "Fred Brooks"}
+]

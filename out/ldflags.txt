@@ -1,0 +1,2 @@
+$ go build -ldflags '-X main.version=v1.0.0' -o shelf ./shelf && ./shelf -version
+shelf v1.0.0

@@ -1,0 +1,14 @@
+$ docker run -d --name shelf -p 8080:8080 shelf:final
+$ curl 'localhost:8080/slow?ms=3000' &     # a 3-second request
+$ time docker stop shelf     # one second later
+real	0m2.319s
+$ # the request:
+done after 3000 ms
+[curl exit code 0]
+$ docker inspect -f '{{.State.ExitCode}}' shelf
+0
+$ docker logs shelf
+{"time":"2026-11-18T16:13:31.158710927Z","level":"INFO","msg":"listening","addr":":8080","version":"v1.0.0","gomaxprocs":12,"cpus":12,"memlimit":9223372036854775807}
+{"time":"2026-11-18T16:13:33.685723174Z","level":"INFO","msg":"shutting down, finishing requests in flight"}
+{"time":"2026-11-18T16:13:35.659848984Z","level":"INFO","msg":"request","method":"GET","path":"/slow","status":200,"took":"3.002s"}
+{"time":"2026-11-18T16:13:35.781930068Z","level":"INFO","msg":"bye"}

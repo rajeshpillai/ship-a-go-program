@@ -1,0 +1,12 @@
+$ docker run shelf:final
+{"time":"2026-11-18T17:56:15.755631601Z","level":"INFO","msg":"listening","addr":":8080","version":"v1.0.0","gomaxprocs":12,"cpus":12,"memlimit":9223372036854775807}
+$ docker run --cpus=2 shelf:final
+{"time":"2026-11-18T17:56:17.957606928Z","level":"INFO","msg":"listening","addr":":8080","version":"v1.0.0","gomaxprocs":2,"cpus":12,"memlimit":9223372036854775807}
+$ docker run --cpus=0.5 shelf:final
+{"time":"2026-11-18T17:56:20.209601759Z","level":"INFO","msg":"listening","addr":":8080","version":"v1.0.0","gomaxprocs":2,"cpus":12,"memlimit":9223372036854775807}
+$ docker run --cpus=2 -e GOMAXPROCS=8 shelf:final
+{"time":"2026-11-18T17:56:22.607127308Z","level":"INFO","msg":"listening","addr":":8080","version":"v1.0.0","gomaxprocs":8,"cpus":12,"memlimit":9223372036854775807}
+$ docker run --memory=256m shelf:final
+{"time":"2026-11-18T17:56:24.869605627Z","level":"INFO","msg":"listening","addr":":8080","version":"v1.0.0","gomaxprocs":12,"cpus":12,"memlimit":9223372036854775807}
+$ docker run --memory=256m -e GOMEMLIMIT=200MiB shelf:final
+{"time":"2026-11-18T17:56:27.170782653Z","level":"INFO","msg":"listening","addr":":8080","version":"v1.0.0","gomaxprocs":12,"cpus":12,"memlimit":209715200}

@@ -1,0 +1,12 @@
+$ go build -o shelf ./shelf && wc -c < shelf
+9827292
+$ CGO_ENABLED=0 go build -o shelf ./shelf && wc -c < shelf
+9750118
+$ go build -ldflags="-s -w" -o shelf ./shelf && wc -c < shelf
+6811913
+$ go build -trimpath -o shelf ./shelf && wc -c < shelf
+9807842
+$ go build -tags timetzdata -o shelf ./shelf && wc -c < shelf
+10239196
+$ CGO_ENABLED=0 go build -trimpath -ldflags="-s -w" -o shelf ./shelf && wc -c < shelf
+6742178

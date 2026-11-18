@@ -1,0 +1,6 @@
+$ (cd one && go build -o ../a ./shelf); (cd two && go build -o ../b ./shelf); sha256sum a b
+9061bb9af0f3b83d994882ff540e3b8678ba8ad1de03f8ee7e88f58fd5493d30  a
+9418aa86c00f43416189f41a4fa4e542b25d074b9a6406daceeaace0df2bd361  b
+$ (cd one && go build -trimpath -o ../a ./shelf); (cd two && go build -trimpath -o ../b ./shelf); sha256sum a b
+4f9faf9c1fd43ebce60a799d3ff1b05b76c2cca2cd0239563339bc4fd709c705  a
+4f9faf9c1fd43ebce60a799d3ff1b05b76c2cca2cd0239563339bc4fd709c705  b

@@ -1,0 +1,11 @@
+$ docker run -d --name shelf -p 8080:8080 shelf:scratch
+$ curl localhost:8080/books.json
+[
+  {"id": 1, "title": "The Go Programming Language", "author": "Alan Donovan and Brian Kernighan"},
+$ curl localhost:8080/hours
+unknown time zone Asia/Kolkata
+$ curl localhost:8080/latest-go
+Get "https://go.dev/VERSION?m=text": tls: failed to verify certificate: x509: certificate signed by unknown authority
+$ docker top shelf -o pid,uid,args
+PID                 UID                 COMMAND
+357469              0                   /shelf

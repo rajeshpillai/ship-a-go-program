@@ -1,0 +1,16 @@
+$ git tag v1.0.0
+$ go build -o ../shelf ./shelf && ../shelf -version
+shelf dev
+module: github.com/rajeshpillai/ship-a-go-program v1.0.0
+built with: go1.26.2
+vcs.revision: 8d463ccff76bd1bd8cb4cb33d5ed3a6de19e86ff
+vcs.time: 2026-11-18T15:19:31Z
+vcs.modified: false
+$ echo '// one more line' >> shelf/main.go     # a change, not committed
+$ go build -o ../shelf ./shelf && ../shelf -version | head -2
+shelf dev
+module: github.com/rajeshpillai/ship-a-go-program v1.0.0+dirty
+$ git commit -am 'one more line'
+$ go build -o ../shelf ./shelf && ../shelf -version | head -2
+shelf dev
+module: github.com/rajeshpillai/ship-a-go-program v1.0.1-0.20261118151933-c3d996c298d2

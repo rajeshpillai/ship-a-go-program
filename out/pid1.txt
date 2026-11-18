@@ -1,0 +1,10 @@
+$ docker run -d --name shelf shelf:naive && docker top shelf -o pid,args
+PID                 COMMAND
+358309              /bin/sh -c /app/server
+358327              /app/server
+$ docker run -d --name shelf --entrypoint /app/server shelf:naive && docker top shelf -o pid,args
+PID                 COMMAND
+358532              /app/server
+$ docker run -d --name shelf shelf:final && docker top shelf -o pid,args
+PID                 COMMAND
+358852              /shelf

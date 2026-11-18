@@ -1,0 +1,4 @@
+$ CGO_ENABLED=0 go build -o shelf ./shelf && file shelf
+shelf: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, Go BuildID=… BuildID[sha1]=fb6450f09093522d52908e3f81d5b4f1eac6a7ca, with debug_info, not stripped
+$ ldd shelf
+	not a dynamic executable
