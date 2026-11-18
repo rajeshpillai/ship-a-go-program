@@ -1,0 +1,6 @@
+$ docker build -f docker/no-mount.Dockerfile .     # the same, without the mount     # after a one-line change; 3 times
+36.1 s  70.5 s  52.6 s
+median 52.6 s
+$ docker build .     # RUN --mount=type=cache     # after a one-line change; 3 times
+12.8 s  11.9 s  13.0 s
+median 12.8 s

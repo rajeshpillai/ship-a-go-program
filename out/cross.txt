@@ -1,19 +1,19 @@
 $ time GOOS=linux GOARCH=arm64 go build -o shelf-linux-arm64 ./shelf
-real	0m15.148s
+real	0m24.835s
 $ file shelf-linux-arm64
 shelf-linux-arm64: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), statically linked, Go BuildID=… BuildID[sha1]=72721ec188fb2df86033997167717e90e796d75f, with debug_info, not stripped
 $ time GOOS=windows GOARCH=amd64 go build -o shelf-windows-amd64.exe ./shelf
-real	0m14.028s
+real	0m23.907s
 $ file shelf-windows-amd64.exe
 shelf-windows-amd64.exe: PE32+ executable (console) x86-64, for MS Windows, 16 sections
 $ time GOOS=darwin GOARCH=arm64 go build -o shelf-darwin-arm64 ./shelf
-real	0m15.449s
+real	0m24.016s
 $ file shelf-darwin-arm64
 shelf-darwin-arm64: Mach-O 64-bit arm64 executable, flags:<|DYLDLINK|PIE>
 $ time GOOS=linux GOARCH=arm64 go build -o shelf-linux-arm64 ./shelf     # again
-real	0m0.159s
+real	0m0.178s
 $ ./shelf-linux-arm64
-bash: shelf-linux-arm64: cannot execute binary file: Exec format error
+bash: ./shelf-linux-arm64: cannot execute binary file: Exec format error
 $ wc -c shelf-*
  9313762 shelf-darwin-arm64
  9024205 shelf-linux-arm64
